@@ -236,7 +236,7 @@
             };
 
             try {
-                const response = await fetch('http://localhost:3000/formulario', {
+                const response = await fetch('https://yume-nikki-page.onrender.com/formulario', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -286,7 +286,7 @@
             }
 
             try {
-                const response = await fetch(`http://localhost:3000/formulario?ID=${id}`, {
+                const response = await fetch(`https://yume-nikki-page.onrender.com/formulario?ID=${id}`, {
                     method: 'GET',
                 });
 
@@ -340,7 +340,7 @@
 
                 if (confirmDelete.isConfirmed) {
                     try {
-                    const response = await fetch('http://localhost:3000/formulario', {
+                    const response = await fetch('https://yume-nikki-page.onrender.com/formulario', {
                         method: 'DELETE',
                         headers: {
                             'Content-Type': 'application/json',
@@ -416,7 +416,7 @@
             };
 
             try {
-                const response = await fetch(`http://localhost:3000/formulario/?ID=${id}`, {
+                const response = await fetch(`https://yume-nikki-page.onrender.com/formulario/?ID=${id}`, {
                     method: 'PUT',
                     headers: {
                         'Content-Type': 'application/json',

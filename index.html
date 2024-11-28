@@ -300,7 +300,7 @@
 
                 if (response.ok) {
                     mostrarDatosEnContenedor(result, 'Datos del usuario consultado:');
-                    document.getElementById("ID").setAttribute("readonly", true);
+                  
                 } else {
                     const errores = result.errors.map(err => err.msg).join('\n');
                     Swal.fire({

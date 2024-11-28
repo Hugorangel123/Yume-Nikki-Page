@@ -152,6 +152,10 @@
             formulario.id = 'USForm'; 
             formulario.enctype = 'multipart/form-data';
 
+            //editado
+            formulario.setAttribute('data-id', idUsuario);
+            //
+
             const titulo = document.createElement('h1');
             titulo.id = 'UStitulo';
             titulo.textContent = 'Perfil de usuario';
@@ -256,7 +260,7 @@
                     console.log(result)
                     mostrarDatosEnContenedor(result, 'Usuario creado exitosamente:');
                     console.log(result)
-                    document.getElementById('miForm').reset()
+                    // document.getElementById('miForm').reset()
 
                 } else {
                     const errores = result.errors.map(err => err.msg).join('\n');
@@ -359,7 +363,7 @@
                             title: 'Usuario eliminado',
                             text: result.message,
                         });
-
+                        document.getElementById("ID").removeAttribute("readonly");
                         document.getElementById('USForm').reset();
                         document.getElementById('five').innerHTML = ''; 
                     } else {
@@ -406,9 +410,17 @@
         document.getElementById('btnConfirmar').addEventListener("click", async () => {
             const formElement = document.getElementById('miForm');
             const formData = new FormData(formElement);
-
-            let id = document.getElementById('ID').value; 
-
+//edit
+            let id = document.getElementById('ID').value;
+            console.log(id);
+            if(id===""){
+                console.log(document.getElementById('USForm').getAttribute('data-id'));
+                console.log('SI FUNCIONA');
+                id=document.getElementById('USForm').getAttribute('data-id');
+            }
+        
+            
+//edit
             const usuario = {
                 ID: id,
                 nombre: formData.get('nombre'),
@@ -472,7 +484,7 @@
 
             document.getElementById("ID").removeAttribute("readonly");
             limpiarFormulario();
-
+           
         });
 
         function limpiarFormulario() {
